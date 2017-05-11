@@ -1,0 +1,321 @@
+/*base*/
+*, *:active, *:hover { outline: medium none !important;}
+body {margin: 0; color: #5e5e5e; font-family: "微软雅黑",宋体,roboto,Arial; font-size: 13px; font-weight: 400; line-height: 1.42857; background-color: #fff;}
+a{text-decoration: none;}
+ul{list-style: none; padding: 0; margin: 0;}
+img{border:0;}
+.container{
+	margin: 0 auto;
+	width: 1200px;
+}
+.pull-left{float: left !important;}
+.pull-right{float: right !important;}
+.text-center{text-align: center;}
+.ml0{margin-left: 0 !important;}
+.po-re{position: relative !important;}
+.full{width: 100% !important;}
+/*login*/
+.wx-scopy.anti-overflow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.login_loading{display: none;}
+.login-content .form_title{
+    font-size: 30px;
+    font-weight: 100;
+    color: #5e5e5e;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    text-align: center; 
+}
+.login-content{
+    border-radius: 2px;
+    padding: 90px 56px 80px;
+    margin: -100px auto 0;
+    position: relative;
+    z-index: 1;
+    max-width: 450px;
+    width: 100%;
+}
+.ribbon{
+    width: 100%;
+    height: 280px;
+    background-color: rgb(76,175,80);
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    position: relative;
+}
+.switch-status{
+	position: absolute;
+    right: 7%;
+    bottom: -23px;
+    transition: 0.3s;
+    z-index: 2;
+    overflow: inherit;
+}
+.switch-status:not([name=switch-status-more]){transform: scale(0);}
+.switch-status.show{transform: scale(1);}
+#login_btn{bottom: -90px;}
+#register_btn{bottom: -157px;}
+#forget_btn{bottom: -224px;}
+#login_btn:before{
+    content: "登录";
+    position: absolute;
+    z-index: 999;
+    background: rgba(97,97,97,.9);
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+    max-width: 170px;
+    width: 40px;
+    right: 66px;
+    top: 13px;
+    padding: 8px 0;
+    text-align: center;
+}
+#register_btn:before{
+    content: "注册新用户";
+    position: absolute;
+    z-index: 999;
+    background: rgba(97,97,97,.9);
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+    max-width: 170px;
+    width: 76px;
+    right: 66px;
+    top: 13px;
+    padding: 8px 0;
+    text-align: center;
+}
+#forget_btn:before{
+    content: "忘记密码?";
+    position: absolute;
+    z-index: 999;
+    background: rgba(97,97,97,.9);
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+    max-width: 170px;
+    width: 71px;
+    right: 66px;
+    top: 13px;
+    padding: 8px 0;
+    text-align: center;
+}
+.login-content .mdl-textfield__label{font-size: 14px;}
+.forget-password{
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    text-decoration: none;
+    color: #aaa;
+}
+.alt-path{
+	position: absolute;
+	left: 0;
+	bottom: -50px;
+	width: auto;
+}
+.top-logo{
+	text-align: center;
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+}
+.top-logo h2{
+	color: #fff;
+    display: none;
+}
+.top-logo img{
+    width: 70px;
+    vertical-align: text-bottom;
+}
+.footer_in_bottom{
+	position: absolute;
+	bottom: 20px;
+}
+.error {
+    font-size: 12px;
+    display: block;
+    color: #ff5722;
+    position: absolute;
+}
+#footer { text-align: center; width: 100%; color: #a2a2a2; margin-top:40px; margin: 40px 0;}
+#footer .f-menu { display: block; width: 100%; padding-left: 0; list-style: none; margin-left: -5px; margin-top: 8px; font-size: 13px;}
+#footer .f-menu > li { display: inline-block; padding-left: 5px; padding-right: 5px;}
+#footer .f-menu > li > a { color: #a2a2a2; text-decoration: none;}
+#footer .f-menu > li > a:hover { color: #777; text-decoration:none;}
+.activation {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.activation .btn {
+    background-color: #2196f3 !important;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 5px 10px;
+    margin: 10px 0 0 0;
+    color: #fff !important;
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: top;
+    border: 0;
+    cursor: pointer;
+}
+.forget-password:hover{
+	text-decoration: underline;
+	color: #ff4081;
+}
+.login-btn{
+	font-size: 13px;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 8px;
+    width: 90px;
+    float: right;
+}
+.agree .mdl-checkbox__label{line-height: 22px;}
+label.remember{
+    width: inherit;
+    margin-top: 15px;
+}
+label.remember span.mdl-checkbox__label{font-size: 13px;}
+@media (min-width: 467px){
+	.vericode img {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    width: 120px;
+	    height: 30px;
+	    top: 10px;
+	}
+}
+@media (max-width: 768px){.footer_in_bottom{position: static;}}
+@media (max-width: 585px){
+    .switch-status{bottom: 67px;}
+    #login_btn{bottom: 0;}
+    #register_btn{bottom: -67px;}
+    #forget_btn{bottom: -134px;}
+    .ribbon{height: 200px;}
+    .top-logo h2{
+        font-weight: 100;
+        font-family: inherit;
+        font-size: 22px;
+        display: block;
+    }
+    .switch_mark{
+        transform: scale(0);
+        width: 56px;
+        height: 56px;
+        background: rgb(255, 140, 179);
+        border-radius: 50%;
+        right: 7%;
+        bottom: 0;
+        position: absolute;
+        z-index: 999;
+        opacity: 1;
+    }
+    .switch_mark.is-active{
+        -webkit-transform: scale(30);
+        -moz-transform: scale(30);
+        -o-transform: scale(30);
+        transform: scale(30);
+        transition: 0.6s;
+        background: #fff;
+    }
+    .switch_mark.remove{
+        opacity: 0;
+        transition: 0.8s;
+    }
+    .login_loading{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 28px;
+        height: 28px;
+        margin: -16px 0 0 -16px;
+        z-index: 999;
+        display: block;
+    }
+    .login_loading.low{z-index: -1;}
+    .login-content{padding: 80px 40px 40px;}
+    .login-content .form_title{
+        font-size: 25px;
+        text-align: left;
+        text-indent: 36px;
+        border-left: 4px solid rgb(255,64,129);
+        font-weight: 400;
+    }
+    .login-btn{
+        background: rgb(255,64,129) !important;
+        color: #fff;
+    }
+}
+.login-btn:hover{
+    background: rgb(255,64,129) !important;
+    color: #fff;
+}
+.switch-status[name=switch-status-more]:before{
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 9px;
+    height: 2px;
+    transform: rotate(45deg);
+    transition: 0.3s;
+    left: 20px;
+}
+.switch-status[name=switch-status-more]:after{
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 9px;
+    height: 2px;
+    transform: rotate(-45deg);
+    transition: 0.3s;
+    left: 26px;
+}
+.switch-status.open[name=switch-status-more]:before{
+    width: 17px;
+    left: 19px;
+}
+.switch-status.open[name=switch-status-more]:after{
+    width: 17px;
+    left: 19px;
+}
+.ribbon:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/login2.jpg) center no-repeat;
+    opacity: 0.1;
+}
+.ripple_position{
+    position: absolute; 
+    right: 7%; 
+    bottom: 0; 
+    transition: 0.3s; 
+    z-index: 2; 
+    overflow: inherit;
+}
+form[name=register_form]{display: none;}
