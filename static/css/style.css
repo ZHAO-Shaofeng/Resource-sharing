@@ -1,17 +1,21 @@
 /*base*/
 *, *:active, *:hover { outline: medium none !important;}
+a,img,button,input,textarea{-webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-appearance:none;}
+/*input,textarea{-webkit-appearance:none;}*/   /*去掉textarea,input的默认样式  IOS上的圆角及内阴影等*/
 body {margin: 0; color: #5e5e5e; font-family: "微软雅黑",宋体,roboto,Arial; font-size: 13px; font-weight: 400; line-height: 1.42857; background-color: #fff;}
 a{text-decoration: none;}
 ul{list-style: none; padding: 0; margin: 0;}
 img{border:0;}
 .container{
 	margin: 0 auto;
-	width: 1200px;
+    width: 100%;
+	max-width: 1200px;
 }
 .pull-left{float: left !important;}
 .pull-right{float: right !important;}
 .text-center{text-align: center;}
 .ml0{margin-left: 0 !important;}
+.pd0{padding: 0 !important;}
 .po-re{position: relative !important;}
 .full{width: 100% !important;}
 /*login*/
@@ -155,6 +159,14 @@ img{border:0;}
     color: #ff5722;
     position: absolute;
 }
+.setpw i{
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(0,0,0,.26);
+}
+.setpw i.open{color: rgb(76, 175, 80);}
 #footer { text-align: center; width: 100%; color: #a2a2a2; margin-top:40px; margin: 40px 0;}
 #footer .f-menu { display: block; width: 100%; padding-left: 0; list-style: none; margin-left: -5px; margin-top: 8px; font-size: 13px;}
 #footer .f-menu > li { display: inline-block; padding-left: 5px; padding-right: 5px;}
@@ -255,11 +267,15 @@ label.remember span.mdl-checkbox__label{font-size: 13px;}
         display: block;
     }
     .login_loading.low{z-index: -1;}
-    .login-content{padding: 80px 40px 40px;}
+    .login-content{
+        padding: 80px 30px 35px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
     .login-content .form_title{
         font-size: 25px;
         text-align: left;
-        text-indent: 36px;
+        text-indent: 25px;
         border-left: 4px solid rgb(255,64,129);
         font-weight: 400;
     }
@@ -319,3 +335,181 @@ label.remember span.mdl-checkbox__label{font-size: 13px;}
     overflow: inherit;
 }
 form[name=register_form]{display: none;}
+/*index*/
+.mdl-layout__tab-bar, .mdl-layout__tab-bar-button{background-color: #43a047;}
+.mdl-layout__tab-bar.hide, .mdl-layout__tab-bar-button.hide{background-color: rgb(76,175,80);}
+.mdl-layout__header-bg{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    filter:alpha(Opacity=15);
+    -moz-opacity:0.15;
+    opacity: 0.12;
+    transition: 0.3s;
+}
+.mdl-header-bar{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.mdl-header-bar.hide{
+    height: 0;
+    opacity: 0;
+}
+.mdl-layout__header-bg.hide{opacity: 0;}
+.mdl-header-bar .title{
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    margin: auto 0 0;
+}
+.mdl-header-bar .sm-title{
+    text-align: center;
+    font-size: 13px;
+    margin: 8px 0 auto;
+}
+.mdl-menu .mdl-menu__item a{
+    display: block;
+    color: rgba(0,0,0,.87);
+}
+.mdl-button--sm{
+    min-width: inherit;
+    box-shadow: none;
+    background: transparent;
+    color: rgb(76,175,80);
+}
+@media (max-width: 585px){
+    .mdl-button--sm{
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .mdl-layout__tab-bar, .mdl-layout__tab-bar-button{background-color: rgb(76,175,80);}
+    .mdl-header-bar{
+        height: 0;
+        opacity: 0;
+    }
+    .mdl-layout__header-bg{opacity: 0;}
+}
+header.mdl-layout__header,
+header .mdl-layout__drawer-button i{color: #fff;}
+header .mdl-textfield__input{border-color: #fff;}
+.mdl-layout.is-upgraded .mdl-layout__tab.is-active,
+.mdl-layout__tab-bar-button.is-active{color: rgb(255, 255, 255);}
+.mdl-layout__tab{color: rgba(255, 255, 255, 0.5);}
+img.article-image {
+    width: 100%;
+    height: auto;
+}
+.portfolio-card .mdl-card__media a{
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+.portfolio-card .mdl-card__title {padding-bottom: 0;}
+.portfolio-card .mdl-card__title-text{
+    height: 26px;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+.portfolio-card .mdl-card__supporting-text{
+    height: 36px;
+    overflow: hidden;
+    padding: 0 16px;
+    margin: 16px 0;
+}
+.portfolio-card .mdl-common-btn{
+    color: rgb(255,64,129);
+    min-width: inherit;
+}
+.card-hoverable{
+    transition: box-shadow .25s cubic-bezier(.4,0,.2,1);
+    will-change: box-shadow;
+}
+.portfolio-card:hover{box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);}
+.entrance{
+    position: relative;
+    z-index: 3;
+    transition: 0.3s;
+}
+.entrance button{
+    position: absolute;
+    right: 7%;
+    bottom: -23px;
+}
+@media (max-width: 839px){
+    .entrance{
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+    }
+    .entrance button{position: static;}
+}
+@media (max-width: 768px) {
+    header .mdl-layout__drawer-button,
+    .mdl-layout__tab-bar-button{cursor: default;}
+    .portfolio-card .mdl-common-btn{
+        color: #fff;
+        background: rgb(255,64,129);
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
+    .portfolio-card .mdl-card__actions{padding: 16px;}
+}
+@media (max-width: 585px) {
+    .portfolio-card .mdl-card__title{padding: 16px 8px 0;}
+    .portfolio-card .mdl-card__title-text{font-size: 16px;}
+    .portfolio-card .mdl-common-btn{
+        font-size: 12px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .portfolio-card .mdl-card__supporting-text{
+        font-size: 10px;
+        padding: 0 8px;
+        margin: 4px 0 10px;
+    }
+    .portfolio-card .mdl-card__actions{padding: 8px;}
+}
+@media (max-width: 320px) {.portfolio-card{width: 100% !important;}}
+/*pagination*/
+.pagination{
+    width: 100%;
+    text-align: center;
+    margin: 35px 0 0;
+}
+.pagination li{
+    display: inline-block;
+    min-width: inherit;
+    padding: 0;
+    width: 40px;
+    margin: 0 4px;
+}
+.pagination li a{
+    display: block;
+    color: #5e5e5e;
+}
+.pagination li.active{
+    background: rgb(76,175,80);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.pagination li.active a{color: #fff;}
+@media (max-width: 585px) {
+    .pagination{margin: 25px 0 0;}
+    .pagination li{
+        width: 36px;
+        height: 32px;
+        line-height: 32px;
+        margin: 0;
+    }
+}
