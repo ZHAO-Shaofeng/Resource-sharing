@@ -151,7 +151,7 @@ img{border:0;}
 }
 .footer_in_bottom{
 	position: absolute;
-	bottom: 20px;
+	bottom: 0;
 }
 .error {
     font-size: 12px;
@@ -323,7 +323,7 @@ label.remember span.mdl-checkbox__label{font-size: 13px;}
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../images/login2.jpg) center no-repeat;
+    background: url(../images/material/banner9.jpg) center no-repeat;
     opacity: 0.1;
 }
 .ripple_position{
@@ -336,6 +336,11 @@ label.remember span.mdl-checkbox__label{font-size: 13px;}
 }
 form[name=register_form]{display: none;}
 /*index*/
+.mdl-layout__content{
+    display: flex;
+    flex-direction: column;
+}
+.mdl-layout.is-upgraded .mdl-layout__tab-panel{flex: 1;}
 .mdl-layout__tab-bar, .mdl-layout__tab-bar-button{background-color: #43a047;}
 .mdl-layout__tab-bar.hide, .mdl-layout__tab-bar-button.hide{background-color: rgb(76,175,80);}
 .mdl-layout__header-bg{
@@ -352,7 +357,7 @@ form[name=register_form]{display: none;}
     transition: 0.3s;
 }
 .mdl-header-bar{
-    height: 200px;
+    height: 156px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -512,4 +517,70 @@ img.article-image {
         line-height: 32px;
         margin: 0;
     }
+}
+/*Left slip*/
+.mdl-layout__drawer{
+    width: 268px;
+    -webkit-transform: translateX(-278px);
+    transform: translateX(-278px);
+}
+.userCenter{
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+.userCenter .user_bg_img{
+    width: 100%;
+    max-height: 150px;
+}
+.userCenter .info{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.userCenter .info .userImg{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #fff;
+}
+.userCenter .info .userImg img{width: 100%;}
+.userCenter .info .userName,
+.userCenter .info .userEmail{
+    margin: 16px 0 0 0;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    height: 24px;
+}
+.userCenter .info .userEmail{
+    margin: 0;
+    font-weight: 100;
+}
+.userCenter .info .userOperate{
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    color: #fff;
+}
+.userCenter .info .userOperate i{font-size: 20px;}
+.userCenter .info .userOperate-ul{width: 235px !important;}
+.mdl-layout__drawer .nav_drawer .mdl-navigation .mdl-navigation__link{
+    padding: 16px 0 16px 72px;
+    color: #000000;
+}
+.nav_drawer .mdl-navigation__link i{
+    position: absolute;
+    left: 16px;
+    color: #737373;
+}
+.mdl-layout__drawer .nav_drawer .mdl-navigation .mdl-navigation__link.active{color: rgb(255,64,129);}
+.mdl-layout__drawer .nav_drawer .mdl-navigation .mdl-navigation__link-line{
+    padding-top: 8px;
+    border-top: 1px solid #ddd;
 }

@@ -70,8 +70,9 @@ $(document).on("click", "#setpw i", function(){   //注册时查看密码
 $(".mdl-layout__content").scroll(function(){    //向下滚收起首页一部分头部
 // 滚动条距离顶部的距离 小于 8px时
   if($(this).scrollTop() < 8){
-    $(".mdl-header-bar, .mdl-layout__header-bg, .mdl-layout__tab-bar, .mdl-layout__tab-bar-button").removeClass("hide");
-  } else{
-    $(".mdl-header-bar, .mdl-layout__header-bg, .mdl-layout__tab-bar, .mdl-layout__tab-bar-button").addClass("hide");
+    $(".mdl-header-bar, .mdl-layout__header-bg, .mdl-layout__tab-bar, .mdl-layout__tab-bar-button").removeClass("hide");    //展开来
+  }
+  else{
+    $(".mdl-header-bar, .mdl-layout__header-bg, .mdl-layout__tab-bar, .mdl-layout__tab-bar-button").addClass("hide");   //收起来
   }
 });
