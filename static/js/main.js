@@ -76,3 +76,9 @@ $(".mdl-layout__content").scroll(function(){    //向下滚收起首页一部分
     $(".mdl-header-bar, .mdl-layout__header-bg, .mdl-layout__tab-bar, .mdl-layout__tab-bar-button").addClass("hide");   //收起来
   }
 });
+
+// 中间内容的高度若是小于887并且大于544时，直接赋值为887
+var mainh_content = $(".page-content").height()
+if( mainh_content > 544 && mainh_content < 887 ){
+    $(".page-content").css("height", "887px");
+}

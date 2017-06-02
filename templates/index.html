@@ -12,41 +12,6 @@
   <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-
-<div id="popUps">
-  <div class="popUps_box mdl-grid mdl-shadow--8dp">
-    <form action="#">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="sample3">
-        <label class="mdl-textfield__label" for="sample3">名称：</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="sample3">
-        <label class="mdl-textfield__label" for="sample3">交易地点：</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="sample3">
-        <label class="mdl-textfield__label" for="sample3">QQ或微信</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield">
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
-        <label class="mdl-textfield__label" for="sample5">描述一下？</label>
-      </div>
-      <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
-        <select id="gender" class="mdl-selectfield__select">
-          <option value=""></option>
-          <option value="option1">分类 1</option>
-          <option value="option2">分类 2</option>
-          <option value="option2">分类 2</option>
-        </select>
-        <div class="mdl-selectfield__icon"><i class="material-icons">arrow_drop_down</i></div>
-        <label class="mdl-selectfield__label" for="gender">选择分类</label>
-      </div>
-    </form>
-  </div>
-  <!-- <div class="popUps_mark"></div> -->
-</div>
-
 <!-- Simple header with scrollable tabs. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header po-re"> <!--mdl-layout__header--waterfall-->
@@ -84,11 +49,14 @@
       <a href="#scroll-tab-6" class="mdl-layout__tab">分类 5</a>
     </div>
     <div class="entrance">
-      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--2dp">
+      <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--2dp home-button" href="release.html">
         <i class="material-icons">add</i>
-      </button>
+      </a>
     </div>
     <div class="mdl-layout__header-bg" style="background: url(../static/images/icon-seamless.png)"></div>
+    <div class="mdl-js-button mdl-js-ripple-effect mdl-layout__drawer-button menu-button">
+      <i class="material-icons">menu</i>
+    </div>
   </header>
   <div class="mdl-layout__drawer">    <!--Left slip-->
     <div class="userCenter">

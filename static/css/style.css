@@ -271,6 +271,7 @@ label.remember span.mdl-checkbox__label{font-size: 13px;}
         padding: 80px 30px 35px;
         margin-left: 8px;
         margin-right: 8px;
+        max-width: inherit;
     }
     .login-content .form_title{
         font-size: 25px;
@@ -448,7 +449,7 @@ img.article-image {
     z-index: 3;
     transition: 0.3s;
 }
-.entrance button{
+.entrance .home-button{
     position: absolute;
     right: 7%;
     bottom: -23px;
@@ -459,7 +460,7 @@ img.article-image {
         right: 16px;
         bottom: 16px;
     }
-    .entrance button{position: static;}
+    .entrance .home-button{position: static;}
 }
 @media (max-width: 768px) {
     header .mdl-layout__drawer-button,
@@ -587,20 +588,20 @@ img.article-image {
 }
 #popUps{position: relative;}
 .popUps_box{
-    position: fixed;
+    /*position: fixed;*/
     z-index: 100;
-    max-width: 500px;
+    max-width: 450px;
     width: 100%;
-    height: 500px;
+    /*min-height: 1000px;*/
     border-radius: 2px;
     background: #fff;
-    left: 50%;
-    top: 50%;
-    margin: -250px 0 0 -250px;
-    display: none;
+    /*left: 50%;*/
+    /*top: 50%;*/
+    margin: 16px auto;
+    /*display: none;*/
     transition: 0.3s;
 }
-/*.popUps_mark{
+.popUps_mark{
     position: fixed;
     width: 100%;
     height: 100%;
@@ -609,4 +610,33 @@ img.article-image {
     top: 0;
     left: 0;
     z-index: 99;
-}*/
+    display: none;
+}
+.popUps_title{
+    font-size: 24px;
+    color: #000;
+    padding: 24px;
+}
+.popUps_box .form_body{
+    padding: 0 24px 0 90px;
+}
+.popUps_box .form_body label{
+    color: #5e5e5e;
+    font-size: 13px;
+}
+.popUps_box .form_body .mdl-textfield i.icons,
+.popUps_box .form_body .mdl-selectfield i.icons{
+    position: absolute;
+    margin: 0 0 0 -50px;
+    top: 23px;
+    color: #737373;
+    font-size: 20px;
+}
+.mdl-selectfield--floating-label.is-focused .mdl-selectfield__label, .mdl-selectfield--floating-label.is-dirty .mdl-selectfield__label{color: rgb(76,175,80);}
+.mdl-selectfield__label:after{background-color: rgb(76,175,80);}
+header .mdl-layout__drawer-button{border-radius: 50%;}
+.mdl-layout__drawer-button.menu-button a{
+    position: relative;
+    z-index: 1;
+    display: block;
+}
