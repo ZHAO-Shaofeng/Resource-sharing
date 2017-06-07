@@ -9,31 +9,13 @@
   <link rel="stylesheet" href="../static/css/material.min.css">
   <link rel="stylesheet" href="../static/css/material-icons.css">
   <link rel="stylesheet" href="../static/css/mdl-selectfield.min.css">
+  <link rel="stylesheet" href="../static/css/dropzone.min.css">
   <link rel="stylesheet" href="../static/css/style.css">
+  <style>
+    
+  </style>
 </head>
-<body>
-
-<style>
-  .po-fi{
-    position: fixed;
-  }
-  .mdl-layout__container{
-    top: 0;
-    left: 0;
-  }
-  .popUps_box{
-    position: relative;
-    z-index: 3;
-    margin-top: 210px;
-    max-width: 768px;
-  }
-  .popUps_box form{margin: 30px auto;}
-  .popUps_box .form_body{
-    max-width: 450px;
-  }
-</style>
-
-
+<body name="drawer_visible">
 <!-- Simple header with scrollable tabs. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="top: 0;">
   <header class="mdl-layout__header po-fi"> <!--mdl-layout__header--waterfall-->
@@ -70,8 +52,8 @@
       <a href="#scroll-tab-5" class="mdl-layout__tab">分类 4</a>
       <a href="#scroll-tab-6" class="mdl-layout__tab">分类 5</a> -->
     </div>
-    <div class="entrance">
-      <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--2dp home-button" href="index.html">
+    <div class="entrance m1140_entrance">
+      <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp home-button" href="index.html">
         <i class="material-icons">arrow_back</i>
       </a>
     </div>
@@ -80,7 +62,7 @@
       <i class="material-icons">menu</i>
     </div>
   </header>
-  <div class="mdl-layout__drawer">
+  <div class="mdl-layout__drawer po-fi">
     <div class="userCenter">
       <div class="info">
         <div class="userImg"><a href="#"><img src="../static/images/user.jpg" alt=""></a></div>
@@ -98,76 +80,69 @@
     </div>
     <div class="nav_drawer">
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link active" href=""><i class="material-icons">home</i>首页</a>
-        <a class="mdl-navigation__link" href=""><i class="material-icons">shopping_cart</i>我的发布</a>
-        <a class="mdl-navigation__link" href=""><i class="material-icons">forum</i>消息</a>
-        <a class="mdl-navigation__link" href=""><i class="material-icons">star</i>我的收藏</a>
+        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link active" href=""><i class="material-icons">home</i>首页</a>
+        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">shopping_cart</i>我的发布</a>
+        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">forum</i>消息</a>
+        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">star</i>我的收藏</a>
         <div class="mdl-navigation__link-line"></div>
-        <a class="mdl-navigation__link" href=""><i class="material-icons">person</i>个人中心</a>
-        <a class="mdl-navigation__link" href=""><i class="material-icons">settings</i>设置</a>
+        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">person</i>个人中心</a>
+        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">settings</i>设置</a>
       </nav>
     </div>
   </div>
   <main class="mdl-layout__content"></main>
 </div>
 
-<div class="popUps_box mdl-grid mdl-shadow--4dp">
-  <form action="#">
-    <!-- <p class="popUps_title">准备好发布了吗？</p> -->
-    <div class="form_body">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-        <i class="material-icons icons">label</i>
-        <input class="mdl-textfield__input" type="text" id="res_name">
-        <label class="mdl-textfield__label" for="res_name">名称：</label>
+<div class="flex-content">
+  <div class="popUps_box mdl-grid mdl-shadow--4dp">
+    <form action="#">
+      <!-- <p class="popUps_title">准备好发布了吗？</p> -->
+      <div id="dropzone" class="dropzone">
+        <div class="dz-default dz-message">
+          <span class="material-icons">add</span>
+          <p>添加照片（最多5张）</p>
+        </div>
       </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-        <i class="material-icons icons">place</i>
-        <input class="mdl-textfield__input" type="text" id="res_place">
-        <label class="mdl-textfield__label" for="res_place">交易地点：</label>
+      <div class="form_body">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
+          <i class="material-icons icons">label</i>
+          <input class="mdl-textfield__input" type="text" id="res_name">
+          <label class="mdl-textfield__label" for="res_name">名称：</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
+          <i class="material-icons icons">place</i>
+          <input class="mdl-textfield__input" type="text" id="res_place">
+          <label class="mdl-textfield__label" for="res_place">交易地点：</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
+          <i class="material-icons icons">contact_mail</i>
+          <input class="mdl-textfield__input" type="text" id="res_way">
+          <label class="mdl-textfield__label" for="res_way">联系方式（QQ或微信）</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
+          <i class="material-icons icons">description</i>
+          <textarea class="mdl-textfield__input" type="text" rows= "3" id="res_description" ></textarea>
+          <label class="mdl-textfield__label" for="res_description">描述一下：</label>
+        </div>
+        <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label full">
+          <i class="material-icons icons">class</i>
+          <select id="res_classify" class="mdl-selectfield__select">
+            <option value=""></option>
+            <option value="option1">分类 1</option>
+            <option value="option2">分类 2</option>
+            <option value="option2">分类 2</option>
+          </select>
+          <div class="mdl-selectfield__icon pd0"><i class="material-icons">arrow_drop_down</i></div>
+          <label class="mdl-selectfield__label" for="res_classify">选择分类</label>
+        </div>
+      </div><!--form_body end-->
+      <div class="full">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect pull-right form_submit" type="button">
+          马上发布
+        </button>
       </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-        <i class="material-icons icons">contact_mail</i>
-        <input class="mdl-textfield__input" type="text" id="res_way">
-        <label class="mdl-textfield__label" for="res_way">QQ或微信</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-        <i class="material-icons icons">description</i>
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="res_description" ></textarea>
-        <label class="mdl-textfield__label" for="res_description">描述一下：</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-        <i class="material-icons icons">description</i>
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="res_description" ></textarea>
-        <label class="mdl-textfield__label" for="res_description">描述一下：</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-        <i class="material-icons icons">description</i>
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="res_description" ></textarea>
-        <label class="mdl-textfield__label" for="res_description">描述一下：</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-        <i class="material-icons icons">description</i>
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="res_description" ></textarea>
-        <label class="mdl-textfield__label" for="res_description">描述一下：</label>
-      </div>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-        <i class="material-icons icons">description</i>
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="res_description" ></textarea>
-        <label class="mdl-textfield__label" for="res_description">描述一下：</label>
-      </div>
-      <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label full">
-        <i class="material-icons icons">class</i>
-        <select id="res_classify" class="mdl-selectfield__select">
-          <option value=""></option>
-          <option value="option1">分类 1</option>
-          <option value="option2">分类 2</option>
-          <option value="option2">分类 2</option>
-        </select>
-        <div class="mdl-selectfield__icon"><i class="material-icons">arrow_drop_down</i></div>
-        <label class="mdl-selectfield__label" for="res_classify">选择分类</label>
-      </div>
-    </div><!--form_body end-->
-  </form>
+    </form>
+  </div>
 </div>
 
 <footer id="footer">
@@ -185,6 +160,23 @@
 <script src="../static/js/jquery-1.11.3.min.js"></script>
 <script src="../static/js/material.min.js"></script>
 <script src="../static/js/mdl-selectfield.min.js"></script>
+<script src="../static/js/dropzone.min.js"></script>
 <script src="../static/js/main.js"></script>
+<script>
+    Dropzone.autoDiscover = false;
+    $("#dropzone").dropzone({
+      url: "/upload",
+      method:"post",
+      maxFiles: 10,
+      // clickable: "#dropzone_btn",
+      addRemoveLinks: true,
+    });
+</script>
+<script>
+  $(document).on("click", function(){
+    if($(".mdl-layout__drawer").hasClass("is-visible")){ $("[name='drawer_visible']").css("overflow", "hidden"); }
+    else{ $("[name='drawer_visible']").css("overflow", "auto"); }
+  })
+</script>
 </body>
 </html>
