@@ -2,7 +2,7 @@
 *, *:active, *:hover { outline: medium none !important;}
 a,img,button,input,textarea{-webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-appearance:none;}
 /*input,textarea{-webkit-appearance:none;}*/   /*去掉textarea,input的默认样式  IOS上的圆角及内阴影等*/
-body {margin: 0; color: #5e5e5e; font-family: "微软雅黑",宋体,roboto,Arial; font-size: 13px; font-weight: 400; line-height: 1.42857; background-color: #fff;}
+body {margin: 0; color: #5e5e5e; font-family: "微软雅黑",宋体,roboto,Arial; font-size: 13px; font-weight: 400; line-height: 1.42857; background-color: #fafafa;}
 a{text-decoration: none;}
 ul{list-style: none; padding: 0; margin: 0;}
 img{border:0;}
@@ -15,9 +15,11 @@ img{border:0;}
 .pull-right{float: right !important;}
 .text-center{text-align: center;}
 .ml0{margin-left: 0 !important;}
+.mlr8{margin-left: 8px; margin-right: 8px;}
 .pd0{padding: 0 !important;}
 .po-re{position: relative !important;}
 .po-fi{position: fixed !important;}
+.high-layer{z-index: 3;}
 .full{width: 100% !important;}
 /*login*/
 .wx-scopy.anti-overflow{
@@ -337,9 +339,11 @@ label.remember span.mdl-checkbox__label{font-size: 13px;}
     overflow: inherit;
 }
 form[name=register_form]{display: none;}
-.mdl-layout__content{
+.logo a{color: #fff;}
+.mdl-layout__content.usermain_content{
     display: flex;
     flex-direction: column;
+    overflow: visible !important;
 }
 .mdl-layout.is-upgraded .mdl-layout__tab-panel{flex: 1;}
 .mdl-layout__tab-bar, .mdl-layout__tab-bar-button{background-color: #43a047;}
@@ -362,10 +366,25 @@ form[name=register_form]{display: none;}
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     overflow: hidden;
     transition: 0.3s;
 }
+.mdl-header-userbar{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    /*transition: 0.3s;*/
+    height: 370px;
+    min-height: 170px;
+    padding: 0 40px 40px 80px;
+    box-sizing: border-box;
+    margin-top: 64px;
+}
+.mdl-header-userbar .container{max-width: 916px;}
 .mdl-header-bar.hide{
     height: 0;
     opacity: 0;
@@ -398,15 +417,14 @@ form[name=register_form]{display: none;}
         line-height: 30px;
         font-size: 12px;
     }
-    .mdl-layout__tab-bar, .mdl-layout__tab-bar-button{background-color: rgb(76,175,80);}
+    .mdl-layout__tab-bar, .mdl-layout__tab-bar-button{background-color: rgb(76,175,80) !important;}
     .mdl-header-bar{
         height: 0;
         opacity: 0;
     }
     .mdl-layout__header-bg{opacity: 0;}
 }
-header.mdl-layout__header,
-header .mdl-layout__drawer-button i{color: #fff;}
+header.mdl-layout__header, .mdl-layout__drawer-button i{color: #fff;}
 header .mdl-textfield__input{border-color: #fff;}
 .mdl-layout.is-upgraded .mdl-layout__tab.is-active,
 .mdl-layout__tab-bar-button.is-active{color: rgb(255, 255, 255);}
@@ -585,7 +603,7 @@ img.article-image {
 .mdl-layout__drawer .nav_drawer .mdl-navigation .mdl-navigation__link.active i{color: rgb(255,64,129);}
 .mdl-layout__drawer .nav_drawer .mdl-navigation .mdl-navigation__link-line{
     padding-top: 8px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 /*Left slip end*/
 body[name=drawer_visible]{
@@ -634,7 +652,10 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
 }
 .mdl-selectfield--floating-label.is-focused .mdl-selectfield__label, .mdl-selectfield--floating-label.is-dirty .mdl-selectfield__label{color: rgb(76,175,80);}
 .mdl-selectfield__label:after{background-color: rgb(76,175,80);}
-header .mdl-layout__drawer-button{border-radius: 50%;}
+.mdl-layout__drawer-button{
+    border-radius: 50%;
+    background-color: transparent;
+}
 .mdl-layout__drawer-button.menu-button a{
     position: relative;
     z-index: 1;
@@ -716,7 +737,7 @@ header .mdl-layout__drawer-button{border-radius: 50%;}
     .popUps_box .form_body{padding: 0 0 16px 36px;}
     .popUps_box .form_body .mdl-textfield i.icons, .popUps_box .form_body .mdl-selectfield i.icons{margin: 0 0 0 -36px;}
     .popUps_box .form_submit{width: 100%;}
-    body[name=drawer_visible] .mdl-layout__header-row:before{
+    .release_header .mdl-layout__header-row:before{
         content: "发布你的信息";
         font-size: 16px;
         color: #fff;
@@ -728,7 +749,188 @@ header .mdl-layout__drawer-button{border-radius: 50%;}
         height: 56px;
         line-height: 56px;
     }
-    body[name=drawer_visible] .mdl-layout__tab-bar-container{display: none;}
+    .release_header .mdl-layout__tab-bar-container{display: none !important;}
 }
 @media (max-width: 350px){.dropzone .dz-preview{margin: 16px 0 0 8px;}}
 @media (max-width: 335px){.dropzone .dz-preview .dz-image{width: 83px; height: 83px;}}
+.mdl-layout__header--userbg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+.mdl-layout__header--userbg img{width: 100%;}
+.myProfile-card{margin-top: 16px;}
+.myProfile-card .card-header{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding-left: 24px;
+    background: #f7f7f7;
+}
+.myProfile-card .card-header span{
+    font-family: "微软雅黑";
+    font-size: 16px;
+}
+.myProfile-card .card-header h5{margin: 16px 0;}
+.myProfile-card .card-header h5 i{
+    vertical-align: middle;
+    font-size: 20px;
+    margin-right: 16px;
+    color: #333;
+}
+.myProfile-card .card-body{
+    padding: 24px;
+    height: auto;
+}
+.myProfile-card .card-body p:last-child{margin: 0;}
+.myProfile-menu{
+    position: absolute;
+    right: 8px;
+    top: 10px;
+}
+.myProfile-menu i{
+    font-size: 20px;
+    color: #5e5e5e;
+}
+.myProfile-card .card-body p{display: table;}
+.myProfile-card .card-body p label{
+    display: table-cell;
+    width: 62px;
+}
+.myProfile-card .card-body p span{display: table-cell;}
+.mdl-layout__header--userbg.mainuser_bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(89, 199, 93) url(../images/banner/banner4.jpg);
+    background-size: cover;
+}
+.mdl-layout__header--userbg.mainuser_bg:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.12);
+}
+.mdl-layout__tab-userbar,
+.usertab-hidden-barbtn .mdl-layout__tab-bar-button{background-color: transparent !important;}
+.mdl-layout__tab-userbar{
+    max-width: 930px;
+    margin: 0 auto;
+    width: 100%;
+}
+.mdl-layout__tab-userbar a{
+    max-width: 56px;
+    width: 100%;
+}
+.mdl-header-userbar .userhead{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background: #f7f7f7;
+}
+.mdl-header-userbar .userhead img{width: 100%;}
+.mdl-header-userbar .flexshow{
+    display: flex;
+    align-items: flex-start;
+}
+.mdl-header-userbar .userinfo{margin: 0 0 0 24px;}
+.mdl-header-userbar .userinfo .name{
+    font-weight: 100;
+    font-family: "微软雅黑";
+    margin: 0 0 16px;
+    height: 40px;
+}
+.mdl-header-userbar .userinfo .email,
+.mdl-header-userbar .userinfo .sign{
+    font-size: 13px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    height: 24px;
+}
+.fixed-userbar{
+    position: fixed;
+    margin-top: 64px;
+    background-color: rgb(76,175,80);
+    top: 0;
+}
+@media (max-width: 1024px) {
+    .mdl-header-userbar{
+        padding: 0 40px 26px 72px;
+        height: 230px;
+    }
+    .mdl-header-userbar .userinfo .name{
+        font-size: 28px;
+        margin: 0 0 12px;
+    }
+    .fixed-userbar{margin-top: 56px;}
+}
+@media (max-width: 768px) {
+    .mdl-header-userbar{
+        padding: 0 40px 26px 72px;
+        height: auto;
+        min-height: 130px;
+        max-height: 130px;
+    }
+    .mdl-header-userbar, .mdl-header-userbar .flexshow{
+        display: block;
+        padding: 0;
+        overflow: hidden;
+    }
+    .mdl-header-userbar .userinfo{margin: 0;}
+    .mdl-header-userbar .userhead{
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+    }
+    .mdl-header-userbar .userinfo .name{
+        text-align: center;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .mdl-header-userbar .userinfo .email, .mdl-header-userbar .userinfo .sign{display: none;}
+    .mdl-layout__tab-userbar{padding: 0;}
+    .usertab-hidden-barbtn .mdl-layout__tab-bar-button{display: none;}
+    .mdl-layout__tab-userbar a{font-size: 13px;}
+    .myProfile-card{
+        width: 100% !important;
+        box-shadow: none;
+        background: #fafafa;
+        min-height: inherit;
+        margin: 8px;
+    }
+    .myProfile-card .card-header{
+        padding-left: 0;
+        border-color: #fafafa;
+        background: #fafafa;
+    }
+    .myProfile-card .card-body {padding: 0 0 0 36px;}
+    .myProfile-menu{right: 0;}
+}
+@media (max-width: 420px) {
+    .mdl-layout__header--userbg.mainuser_bg img{
+        width: auto;
+        height: 100%;
+        min-height: 218px;
+    }
+}
+.mdl-fixed-header-bg{
+    background-color: rgb(76,175,80);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+}
+.mdl-layout__header-row>*{visibility: visible;}
+.mdl-layout__header, .mdl-layout__tab-bar-container{display: block !important;}

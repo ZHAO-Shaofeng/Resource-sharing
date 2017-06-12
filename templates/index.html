@@ -14,10 +14,10 @@
 <body>
 <!-- Simple header with scrollable tabs. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header po-re"> <!--mdl-layout__header--waterfall-->
+  <header class="mdl-layout__header po-re">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title mdl-layout--large-screen-only">资源分享平台</span>
+      <span class="mdl-layout-title mdl-layout--large-screen-only logo"><a href="javascript:void(0);">资源分享平台</a></span>
       <div class="mdl-layout-spacer"></div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
         <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
@@ -49,7 +49,7 @@
       <a href="#scroll-tab-6" class="mdl-layout__tab">分类 5</a>
     </div>
     <div class="entrance">
-      <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp home-button" href="release.html">
+      <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--6dp home-button" href="release.html">
         <i class="material-icons">add</i>
       </a>
     </div>
@@ -61,27 +61,26 @@
   <div class="mdl-layout__drawer">    <!--Left slip-->
     <div class="userCenter">
       <div class="info">
-        <div class="userImg"><a href="#"><img src="../static/images/user.jpg" alt=""></a></div>
+        <div class="userImg"><a href="user.html"><img src="../static/images/user.jpg" alt=""></a></div>
         <p class="userName">ZHAO-Shaofeng</p>
         <p class="userEmail">bem.zhao@gmail.com</p>
         <button id="userOperate" class="mdl-button mdl-js-button mdl-button--icon userOperate">
           <i class="material-icons">arrow_drop_down</i>
         </button>
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect userOperate-ul" for="userOperate">
-          <li class="mdl-menu__item">退出登录</li>
-          <li class="mdl-menu__item">操作2</li>
+          <li class="mdl-menu__item"><a href="javascript:void(0);"></a>退出登录</li>
         </ul>
       </div>
       <img src="../static/images/material/banner17.png" alt="" class="user_bg_img">
     </div>
     <div class="nav_drawer">
       <nav class="mdl-navigation">
-        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link active" href=""><i class="material-icons">home</i>首页</a>
+        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link active" href="javascript:void(0);"><i class="material-icons">home</i>首页</a>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">shopping_cart</i>我的发布</a>
-        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">forum</i>消息</a>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">star</i>我的收藏</a>
+        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">forum</i>消息</a>
         <div class="mdl-navigation__link-line"></div>
-        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">person</i>个人中心</a>
+        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">fingerprint</i>认证</a>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">settings</i>设置</a>
       </nav>
     </div>

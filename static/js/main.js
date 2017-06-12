@@ -1,4 +1,4 @@
-// login
+//登录页面切换
 var touchtime = new Date().getTime();
 $("[name='switch-status-more']").on("click", function(){      //快捷入口
   if( new Date().getTime() - touchtime < 150 ){     //防止无聊人士快速双击
@@ -67,18 +67,103 @@ $(document).on("click", "#setpw i", function(){   //注册时查看密码
   else {$("[name='setpw']").attr("type", "password")}
 })
 
-$(".mdl-layout__content").scroll(function(){    //向下滚收起首页一部分头部
+//向下滚收起首页一部分头部
+$(".mdl-layout__content").scroll(function(){
 // 滚动条距离顶部的距离 小于 8px时
   if($(this).scrollTop() < 8){
-    $(".mdl-header-bar, .mdl-layout__header-bg, .mdl-layout__tab-bar, .mdl-layout__tab-bar-button").removeClass("hide");    //展开来
+    $(".mdl-header-bar, .mdl-layout__header-bg, .mdl-layout__tab-bar, .mdl-layout__tab-bar-button").removeClass("hide");    //展开
   }
   else{
-    $(".mdl-header-bar, .mdl-layout__header-bg, .mdl-layout__tab-bar, .mdl-layout__tab-bar-button").addClass("hide");   //收起来
+    $(".mdl-header-bar, .mdl-layout__header-bg, .mdl-layout__tab-bar, .mdl-layout__tab-bar-button").addClass("hide");   //收起
   }
 });
 
-// 中间内容的高度若是小于887并且大于544时，直接赋值为887
+// 首页---->中间内容的高度若是小于887并且大于544时，直接赋值为887
 var mainh_content = $(".page-content").height()
 if( mainh_content > 544 && mainh_content < 887 ){
     $(".page-content").css("height", "887px");
+}
+
+$(document).on("click", function(){       //解决固定定位时左侧滑定位错误问题
+  if($(".mdl-layout__drawer").hasClass("is-visible")){ $("[name='drawer_visible']").css("overflow", "hidden"); }
+  else{ $("[name='drawer_visible']").css("overflow", "auto"); }
+})
+
+// user  banner部分 
+var bodyDom = document.getElementById("scroll-main");
+var header = document.getElementById("header-gopactiy");
+var userbar = document.getElementById("userbar-gopactiy");
+$(".mdl-layout").on("scroll",function(){
+  var opacity = bodyDom.scrollTop;
+  if(opacity == 0){
+    $(header).css("opacity", "0");
+    $(userbar).css("opacity", "1");
+  }
+})
+// $(window).resize(function() {
+//   var body_length = $(window).width();
+//   if(body_length > 1024){
+//     console.log("aa");
+//   }
+// });
+//判断页面宽度  user页面banner渐变高度变化
+var body_length = $(window).width();
+if(body_length > 1024){                                            //大于1024宽度时
+  $(".mdl-layout").on("scroll",function(){
+    var opacity = bodyDom.scrollTop;
+    if(opacity > 0){
+      var header_opacity = 0 + opacity*.003;
+      var userbar_opacity = 1 - opacity*.003;
+      // console.log(opacity);
+      $(header).css("opacity", header_opacity);
+      $(userbar).css("opacity", userbar_opacity);
+    }
+    if(opacity >= 370){
+      $(".mdl-layout__tab-bar-container").addClass("fixed-userbar");
+      $(".mdl-header-userbar").css("margin-bottom", "48px");
+    }else{
+      $(".mdl-layout__tab-bar-container").removeClass("fixed-userbar");
+      $(".mdl-header-userbar").css("margin-bottom", "0");
+    }
+  })
+}
+if(body_length <= 1024 && body_length > 768){                     //小于1024大于768宽度时
+  console.log("小于1024大于768宽度时");
+  $(".mdl-layout").on("scroll",function(){
+    var opacity = bodyDom.scrollTop;
+    console.log(opacity);
+    if(opacity > 0){
+      var header_opacity = 0 + opacity*.005;
+      var userbar_opacity = 1 - opacity*.006;
+      $(header).css("opacity", header_opacity);
+      $(userbar).css("opacity", userbar_opacity);
+    }
+    if(opacity >= 237){
+      $(".mdl-layout__tab-bar-container").addClass("fixed-userbar");
+      $(".mdl-header-userbar").css("margin-bottom", "48px");
+    }else{
+      $(".mdl-layout__tab-bar-container").removeClass("fixed-userbar");
+      $(".mdl-header-userbar").css("margin-bottom", "0");
+    }
+  })
+}
+if(body_length <= 768){                                           //小于768宽度时
+  console.log("小于768宽度时");
+  $(".mdl-layout").on("scroll",function(){
+    var opacity = bodyDom.scrollTop;
+    console.log(opacity);
+    if(opacity > 0){
+      var header_opacity = 0 + opacity*.008;
+      var userbar_opacity = 1 - opacity*.015;
+      $(header).css("opacity", header_opacity);
+      $(userbar).css("opacity", userbar_opacity);
+    }
+    if(opacity >= 138){
+      $(".mdl-layout__tab-bar-container").addClass("fixed-userbar");
+      $(".mdl-header-userbar").css("margin-bottom", "48px");
+    }else{
+      $(".mdl-layout__tab-bar-container").removeClass("fixed-userbar");
+      $(".mdl-header-userbar").css("margin-bottom", "0");
+    }
+  })
 }
