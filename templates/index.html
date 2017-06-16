@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- windows phone 点击无高光 --> 
   <!-- <meta name="msapplication-tap-highlight" content="no" /> -->
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -49,10 +50,19 @@
       <a href="#scroll-tab-6" class="mdl-layout__tab">分类 5</a>
     </div>
     <div class="entrance">
-      <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--6dp home-button" href="release.html">
-        <i class="material-icons">add</i>
-      </a>
+      <div class="home-button">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--6dp" name="switch-status-more">
+          <i class="material-icons">edit</i>
+        </button>
+        <a id="release_resource_btn" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect release_switch" href="release_resource.html">
+          <i class="material-icons">loop</i>
+        </a>
+        <a id="release_demand_btn" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect release_switch" href="release_demand.html">
+          <i class="material-icons">lightbulb_outline</i>
+        </a>
+      </div>
     </div>
+    <div class="entrance_mark"></div>
     <div class="mdl-layout__header-bg" style="background: url(../static/images/icon-seamless.png)"></div>
     <div class="mdl-js-button mdl-js-ripple-effect mdl-layout__drawer-button menu-button">
       <i class="material-icons">menu</i>
@@ -78,21 +88,21 @@
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link active" href="javascript:void(0);"><i class="material-icons">home</i>首页</a>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">shopping_cart</i>我的发布</a>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">star</i>我的收藏</a>
-        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">forum</i>消息</a>
+        <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href="user_chat.html"><i class="material-icons">forum</i>消息</a>
         <div class="mdl-navigation__link-line"></div>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">fingerprint</i>认证</a>
         <a class="mdl-js-button mdl-js-ripple-effect mdl-navigation__link" href=""><i class="material-icons">settings</i>设置</a>
       </nav>
     </div>
   </div>
-  <main class="mdl-layout__content">
+  <main class="mdl-layout__content flex-layout">
     <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
       <div class="page-content"><!-- Your scroll-tab-1 goes here -->
         <div class="container">
           <div class="mdl-grid">
             <div class="mdl-card mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone mdl-cell--stretch mdl-shadow--2dp card-hoverable portfolio-card">
               <div class="mdl-card__media">
-                <a href="javascript:void(0);" class="mdl-js-button mdl-js-ripple-effect mdl-button--accent">
+                <a href="commodity.html" class="mdl-js-button mdl-js-ripple-effect mdl-button--accent">
                   <img class="article-image" src="../static/images/example2.jpg" alt="">
                 </a>
               </div>
@@ -101,7 +111,7 @@
               </div>
               <div class="mdl-card__supporting-text">教学楼415，git课专用，笔记全有，妈妈再也不用担心我挂科</div>
               <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--sm" href="javascript:void(0);">更多</a>
+                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--sm" href="commodity.html">更多</a>
               </div>
             </div>
             <div class="mdl-card mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone mdl-cell--stretch mdl-shadow--2dp card-hoverable portfolio-card">

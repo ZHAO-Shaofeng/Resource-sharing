@@ -1,23 +1,25 @@
-//登录页面切换
+//使用settimeout来避免快速双击和无法被关闭的问题
 var touchtime = new Date().getTime();
 $("[name='switch-status-more']").on("click", function(){      //快捷入口
-  if( new Date().getTime() - touchtime < 150 ){     //防止无聊人士快速双击
+  if( new Date().getTime() - touchtime < 150 ){     //防止快速双击
       setTimeout(function(){$(".switch-status").removeClass("show");}, 151);
       setTimeout(function(){$("[name='switch-status-more']").removeClass("open");}, 151);
   }else{
     touchtime = new Date().getTime();
-    if($(".switch-status").hasClass("show")){
-      $(".switch-status").removeClass("show");
+    if($(".switch-status, #release_resource_btn, #release_demand_btn").hasClass("show")){
+      $(".switch-status, #release_resource_btn, #release_demand_btn").removeClass("show");
       $("[name='switch-status-more']").removeClass("open");
     }
     else{
-      setTimeout(function(){$("[name='switch-status-more']").addClass("open");}, 10);
-      setTimeout(function(){$("#login_btn").addClass("show");}, 0);
-      setTimeout(function(){$("#register_btn").addClass("show");}, 50);
-      setTimeout(function(){$("#forget_btn").addClass("show");}, 150);
+      setTimeout(function(){$(".entrance_mark").addClass("show");}, 10);      //首页快捷发布
+      setTimeout(function(){$("[name='switch-status-more']").addClass("open");}, 10);     //快捷入口
+      setTimeout(function(){$("#login_btn, #release_resource_btn").addClass("show");}, 0);      //第一个按钮
+      setTimeout(function(){$("#register_btn, #release_demand_btn").addClass("show");}, 50);      //第二个按钮
+      setTimeout(function(){$("#forget_btn").addClass("show");}, 150);      //第三个按钮
     }
-    $(".wx-scopy").on("click", function(){
-      $(".switch-status").removeClass("show");
+    $(".entrance_mark").on("click", function(){$(this).removeClass("show");})
+    $(document).on("click", function(){
+      $(".switch-status, #release_resource_btn, #release_demand_btn, .entrance_mark").removeClass("show");
       $("[name='switch-status-more']").removeClass("open");
     })
   }
@@ -32,17 +34,16 @@ $(document).on("click", "#login_btn, #register_btn", function(){    //登录、�
   setTimeout(function(){
     mark.addClass("remove");        //删掉蒙板和loading
     $(".login_loading").removeClass("is-active");
-  }, 2000);
+  }, 1500);
   setTimeout(function(){
     mark.removeClass("is-active remove");
     $(".login_loading").addClass("low");
     $(".wx-scopy").removeClass("anti-overflow");
-  }, 3000);
+  }, 2000);
 })
 
 $(document).on("click", "#login_btn, #register_btn, #forget_btn", function(){   //切换登录、注册、忘记密码
   $(".switch-status").removeAttr("disabled");
-  $(".switch-status").addClass("mdl-button--colored");
   $(this).attr("disabled","true");
   $(this).removeClass("mdl-color--accent");
 })
@@ -167,3 +168,7 @@ if(body_length <= 768){                                           //小于768宽
     }
   })
 }
+
+// user_chat -> right_slip  显示隐藏
+$(document).on("click", "#right_slip_btn", function(){$(".right_silp__obfuscator, .right_slip").addClass("is-visible");})
+$(document).on("click", ".right_silp__obfuscator", function(){$(".right_silp__obfuscator, .right_slip").removeClass("is-visible");})
