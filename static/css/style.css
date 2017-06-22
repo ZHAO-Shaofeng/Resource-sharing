@@ -338,8 +338,13 @@ form[name=register_form]{display: none;}
     flex-direction: column;
 }
 .mdl-layout__content.usermain_content{overflow: visible !important;}
-.mdl-layout.is-upgraded .mdl-layout__tab-panel{flex: 1;}
+.mdl-layout.is-upgraded .mdl-layout__tab-panel{
+    flex: 1;
+    height: 100%;
+}
 .mdl-layout__tab-bar, .mdl-layout__tab-bar-button{background-color: #43a047;}
+.chatroom_header .mdl-layout__tab-bar, .chatroom_header .mdl-layout__tab-bar-button{background-color: transparent;}
+.release_header .mdl-layout__tab-bar, .release_header .mdl-layout__tab-bar-button{background-color: transparent;}
 .mdl-layout__tab-bar.hide, .mdl-layout__tab-bar-button.hide{background-color: rgb(76,175,80);}
 .mdl-layout__header-bg{
     position: absolute;
@@ -393,7 +398,7 @@ form[name=register_form]{display: none;}
 .mdl-header-bar .sm-title{
     text-align: center;
     font-size: 13px;
-    margin: 8px 0 auto;
+    margin: 8px 0 38px;
     color: rgba(255, 255, 255, 0.70);
 }
 .mdl-menu .mdl-menu__item a{
@@ -427,6 +432,10 @@ header .mdl-textfield__input{border-color: #fff;}
 img.article-image {
     width: 100%;
     height: auto;
+}
+.portfolio-card .mdl-card__media{
+    max-height: 213px;
+    background: #eeeeee;
 }
 .portfolio-card .mdl-card__media a{
     display: block;
@@ -858,6 +867,7 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
     margin: 0 auto;
     width: 100%;
     height: auto;
+    overflow-x: inherit;
 }
 .mdl-layout__tab-userbar a{
     max-width: 56px;
@@ -1043,6 +1053,7 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
     white-space: nowrap;
     width: calc(100% - 100px);
     float: left;
+    color: rgba(0,0,0,.87);
 }
 .mdl-list__item--two-line .mdl-list__item-primary-content .mdl-list__item-sub-title{
     font-size: 13px;
@@ -1121,6 +1132,14 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
 @media (max-width: 585px){
     .mdl-list__item--two-line:after{
         left: auto;
+        right: -72px;
+    }
+    .user_list .mdl-list__item--two-line:after{
+        left: auto;
+        right: -67px;
+    }
+    .user_chat_list .mdl-list__item--two-line:after{
+        left: auto;
         right: -56px;
     }
     .mdl-list__item--two-line:hover {background: transparent;}
@@ -1138,3 +1157,157 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
     width: 35px;
     height: 35px;
 }
+
+
+
+
+
+
+
+
+
+
+#chatroom_main .lv-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #FFF;
+    text-align: center;
+    line-height: 34px;
+    font-size: 15px;
+    margin-right: 15px;
+    padding: 0 !important;
+    text-transform: uppercase;
+}
+#chatroom_main .lv-avatar > img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    vertical-align: top;
+}
+#chatroom_main .listview .lv-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    color: #000;
+    font-size: 13px;
+    margin: 0;
+    height: 18px;
+}
+#chatroom_main .listview .lv-item .lv-small {
+    font-size: 12px;
+    color: #A9A9A9;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    height: 17px;
+}
+
+#chatroom_main .lv-message .lv-body{
+    height: 400px;
+    overflow: auto;
+}
+#chatroom_main .lv-message .lv-item.right {text-align: right;}
+#chatroom_main .lv-message .lv-item.right .ms-item {background: #98E165;}
+#chatroom_main .lv-message .lv-item:not(.right) .ms-item {
+    background: #ffc107;
+    color: #fff;
+}
+#chatroom_main .ms-item {
+    padding: 8px 12px 9px;
+    border-radius: 2px;
+    display: inline-block;
+    font-weight: 400;
+}
+#chatroom_main .ms-date {
+    display: block;
+    color: #B3B3B3;
+    margin-top: 7px;
+}
+#chatroom_main .ms-date > i {
+    font-size: 14px;
+    vertical-align: sub;
+    line-height: 100%;
+}
+#chatroom_main .lv-message .lv-item.right .lv-avatar {
+    margin-right: 0;
+    margin-left: 15px;
+}
+#chatroom_main .lv-message .lv-item {padding: 8px 16px;}
+#chatroom_main .ms-menu .lv-item .media-body{padding: 0;}
+#chatroom_main .ms-menu .lv-item:not(.active):hover {
+    background: #F2F2F2;
+    cursor: pointer;
+}
+#chatroom_main .lv-item .media-body{
+    padding: 0;
+    overflow: hidden;
+}
+#chatroom_main .lv-footer{
+    display: flex;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    height: 100px;
+}
+#chatroom_main .lv-footer button{
+    flex: 0;
+    height: 100%;
+    background: #F5F5F5;
+}
+#chatroom_main .lv-footer button i{color: rgb(76,175,80);}
+#chatroom_main .lv-footer .textarea{
+    width: 100%;
+    min-height: 20px;
+    max-height: 90px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex: 1;
+    margin: 16px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+#chatroom_main .lv-footer .textarea:focus{border-bottom: 2px solid rgb(76,175,80);}
+@media (max-width: 585px) {
+    #chatroom_main{margin: 64px 8px 70px;}
+    #chatroom_main .lv-message .lv-item{padding: 8px 50px 8px 0;}
+    #chatroom_main .lv-message .lv-item.right{
+        padding-left: 50px;
+        padding-right: 0;
+    }
+    #chatroom_main .lv-message .lv-body{height: inherit;}
+    #chatroom_main .lv-footer{
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        margin-left: -8px;
+        height: inherit;
+        background: #fff;
+        box-shadow: 0 -2px 5px -1px rgba(0, 0, 0, 0.12);
+    }
+    #chatroom_main .ms-date{
+        color: #ddd;
+        margin-top: 5px;
+    }
+    .chatroom_footer{display: none;}
+    #chatroom_main .lv-footer textarea{border-bottom: 1px solid rgba(0,0,0,.12);}
+    #chatroom_main .lv-footer .textarea{margin: 16px 0 16px 16px;}
+    #chatroom_main .lv-footer button{
+        background: none;
+        min-width: 60px;
+        height: 60px;
+        padding: 0;
+        align-self: flex-end;
+    }
+}
+.user_container{max-width: 900px;}
+.subheaders{
+    height: 48px;
+    line-height: 48px;
+    text-align: right;
+    margin: 0 8px;
+    padding: 0 26px;
+}
+.subheaders .material-icons i{color: rgba(0, 0, 0, 0.54);}
+.mdl-card{min-height: auto;}

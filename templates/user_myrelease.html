@@ -50,8 +50,8 @@
     </div>
     <!-- Tabs -->
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-layout__tab-userbar">
-      <a href="javascript:void(0);" class="mdl-layout__tab is-active">我的信息</a>        <!-- href="#user_panel_myinfo" -->
-      <a href="" class="mdl-layout__tab">我的发布</a>                                     <!-- href="#user_panel_myrelease" -->
+      <a href="user.html" class="mdl-layout__tab">我的信息</a>        <!-- href="#user_panel_myinfo" -->
+      <a href="javascript:void(0);" class="mdl-layout__tab is-active">我的发布</a>                                     <!-- href="#user_panel_myrelease" -->
       <a href="" class="mdl-layout__tab">我的收藏</a>                                     <!-- href="#user_panel_mylike" -->
       <a href="user_chat.html" class="mdl-layout__tab">消息</a>                           <!-- href="#user_panel_chat" -->
       <a href="" class="mdl-layout__tab">认证</a>                                         <!-- href="#user_panel_attest" -->
@@ -95,71 +95,32 @@
     </div>
   </div>
   <main class="mdl-layout__content usermain_content">
-    <section class="mdl-layout__tab-panel is-active" id="user_panel_myinfo">
-      <div class="page-content"><!-- Your user_panel_myinfo goes here -->
+    <section class="mdl-layout__tab-panel" id="user_panel_myinfo">
+      <div class="page-content"><!-- Your user_panel_info goes here --></div>
+    </section>
+    <section class="mdl-layout__tab-panel is-active" id="user_panel_myrelease">
+      <div class="page-content"><!-- Your user_panel_myrelease goes here -->
         <div class="container user_container">
           <div class="mdl-grid">
-            <div class="mdl-card mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-shadow--2dp mdl-cell--top myProfile-card">
-              <div class="card-header">
-                <h5><i class="material-icons">contacts</i><span>联系方式</span></h5>
-                <button id="myProfile-menu1" class="mdl-button mdl-js-button mdl-button--icon myProfile-menu">
-                  <i class="material-icons">more_vert</i>
-                </button>
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="myProfile-menu1">
-                  <li class="mdl-menu__item">修改</li>
-                </ul>
-              </div><!--card-header end-->
-              <div class="card-body">
-                <p>
-                  <label>Q Q：</label>
-                  <span>820731799</span>
-                </p>
-                <p>
-                  <label>手机：</label>
-                  <span>18129865526</span>
-                </p>
-                <p>
-                  <label>邮箱：</label>
-                  <span>820731799@qq.com</span>
-                </p>
-              </div><!--card-body end-->
-            </div><!--mdl-6-col end-->
-            <div class="mdl-card mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-shadow--2dp mdl-cell--top myProfile-card">
-              <div class="card-header">
-                <h5><i class="material-icons">assignment</i><span>基本信息</span></h5>
-                <button id="myProfile-menu2" class="mdl-button mdl-js-button mdl-button--icon myProfile-menu">
-                  <i class="material-icons">more_vert</i>
-                </button>
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="myProfile-menu2">
-                  <li class="mdl-menu__item">修改</li>
-                </ul>
-              </div><!--card-header end-->
-              <div class="card-body">
-                <p>
-                  <label>认证：</label>
-                  <span>已认证</span>
-                </p>
-                <p>
-                  <label>用户名：</label>
-                  <span>ZHAO-Shaofeng</span>
-                </p>
-                <p>
-                  <label>班级：</label>
-                  <span>13互联网G5-1</span>
-                </p>
-                <p>
-                  <label>宣言：</label>
-                  <span>热爱学习，学习使我快乐；热爱生活，生活充满激情。</span>
-                </p>
-              </div><!--card-body end-->
-            </div><!--mdl-6-col end-->
+            <div class="mdl-cell mdl-cell--12-col subheaders">
+              <span class="pull-left">6月</span>
+              <button class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">delete</i>
+              </button>
+            </div>
+            <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-cell--top user-card">
+              <ul class="mdl-list full user_chat_list">
+                <li class="mdl-list__item mdl-list__item--two-line">
+                  <div class="mdl-list__item-primary-content full">
+                    <p class="mdl-list__item-title">ZHAO-Shaofeng</p>
+                    <p class="mdl-list__item-sub-title">聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div><!--mdl-grid end-->
-        </div><!--container end-->
-        <!-- <div style="height: 1000px;"></div> -->
+        </div>
       </div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="user_panel_myrelease">
-      <div class="page-content"><!-- Your user_panel_myrelease goes here --></div>
     </section>
     <section class="mdl-layout__tab-panel" id="user_panel_mylike">
       <div class="page-content"><!-- Your user_panel_mylike goes here --></div>

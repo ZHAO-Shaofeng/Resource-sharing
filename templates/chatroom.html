@@ -5,7 +5,7 @@
   <!-- <meta name="msapplication-tap-highlight" content="no" /> -->
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Resource sharing</title>
+  <title>资源分享平台</title>
   <link rel="stylesheet" href="../static/css/material.min.css">
   <link rel="stylesheet" href="../static/css/material-icons.css">
   <link rel="stylesheet" href="../static/css/mdl-selectfield.min.css">
@@ -18,7 +18,7 @@
 <body name="drawer_visible">
 <!-- Simple header with scrollable tabs. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="top: 0;">
-  <header class="mdl-layout__header mdl-shadow--2dp po-fi chatroom_header">
+  <header class="mdl-layout__header mdl-shadow--2dp po-fi chatroom_header ">
     <div class="mdl-layout__header-row">
       <!-- Title -->
       <p class="mdl-layout-title mg0 chatroom_header-title">ZHAO-Shaofeng</p>
@@ -64,105 +64,65 @@
 </div>
 
 <div class="flex-content">
-  <div class="popUps_box mdl-grid mdl-shadow--4dp">
-    <form action="#">
-      <!-- <p class="popUps_title">准备好发布了吗？</p> -->
-      <div id="dropzone" class="dropzone">
-        <div class="dz-default dz-message">
-          <span class="material-icons">add</span>
-          <p>添加照片（最多5张）</p>
-        </div>
-      </div>
-      <div class="form_body">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-          <i class="material-icons icons">label</i>
-          <input class="mdl-textfield__input" type="text" id="res_name">
-          <label class="mdl-textfield__label" for="res_name">名称：</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-          <i class="material-icons icons">place</i>
-          <input class="mdl-textfield__input" type="text" id="res_place">
-          <label class="mdl-textfield__label" for="res_place">交易地点：</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-          <i class="material-icons icons">contact_mail</i>
-          <input class="mdl-textfield__input" type="text" id="res_way">
-          <label class="mdl-textfield__label" for="res_way">联系方式（QQ或微信）</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-          <i class="material-icons icons">description</i>
-          <textarea class="mdl-textfield__input" type="text" rows= "3" id="res_description" ></textarea>
-          <label class="mdl-textfield__label" for="res_description">描述一下：</label>
-        </div>
-        <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label full">
-          <i class="material-icons icons">class</i>
-          <select id="res_classify" class="mdl-selectfield__select">
-            <option value=""></option>
-            <option value="option1">分类 1</option>
-            <option value="option2">分类 2</option>
-            <option value="option2">分类 2</option>
-          </select>
-          <div class="mdl-selectfield__icon pd0"><i class="material-icons">arrow_drop_down</i></div>
-          <label class="mdl-selectfield__label" for="res_classify">选择分类</label>
-        </div>
-      </div><!--form_body end-->
-      <div class="full">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect pull-right form_submit" type="button">
-          马上发布
+  <div id="chatroom_main" class="popUps_box mdl-shadow--4dp">
+    <div class="listview lv-message full">
+
+      <div class="lv-body">
+        <div class="lv-item media">
+          <div class="lv-avatar pull-left">
+            <img src="../static/images/user_default.jpg" alt="">
+          </div>
+          <div class="media-body">
+            <div class="ms-item">你好你好你好</div>
+            <small class="ms-date"><i class="material-icons">access_time</i> 2016.11.09 09:00</small>
+          </div>
+        </div><!--lv-item end-->
+        
+        <div class="lv-item media right">
+          <div class="lv-avatar pull-right">
+            <img src="../static/images/user.jpg" alt="">
+          </div>
+          <div class="media-body">
+            <div class="ms-item">聊天正文聊天正文聊天正文聊天正文聊天正文聊天正文聊天正文</div>
+            <small class="ms-date"><i class="material-icons">access_time</i> 2016.11.09 09:30</small>
+          </div>
+        </div><!--lv-item end-->
+        
+        <div class="lv-item media right">
+          <div class="lv-avatar pull-right">
+            <img src="../static/images/user.jpg" alt="">
+          </div>
+          <div class="media-body">
+            <div class="ms-item">正文内容正文内容正文内容正文内容</div>
+            <small class="ms-date"><i class="material-icons">access_time</i> 2016.11.09 09:30</small>
+          </div>
+        </div><!--lv-item end-->
+        
+        <div class="lv-item media">
+          <div class="lv-avatar pull-left">
+            <img src="../static/images/user_default.jpg" alt="">
+          </div>
+          <div class="media-body">
+            <div class="ms-item">聊天正文聊天正文聊天正文聊天正文聊天正文</div>
+            <small class="ms-date"><i class="material-icons">access_time</i> 2016.11.09 10:24</small>
+          </div>
+        </div><!--lv-item end-->
+      </div><!--lv-body end-->
+      <div class="lv-footer">
+        <div class="textarea" contenteditable="true"></div>
+        <!-- <div class="mdl-textfield mdl-js-textfield">
+          <textarea class="mdl-textfield__input" type="text" id="user_talk" ></textarea>
+          <label class="mdl-textfield__label" for="user_talk"></label>
+        </div> -->
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">send</i>
         </button>
       </div>
-    </form>
-    <form action="#">
-      <!-- <p class="popUps_title">准备好发布了吗？</p> -->
-      <div id="dropzone" class="dropzone">
-        <div class="dz-default dz-message">
-          <span class="material-icons">add</span>
-          <p>添加照片（最多5张）</p>
-        </div>
-      </div>
-      <div class="form_body">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-          <i class="material-icons icons">label</i>
-          <input class="mdl-textfield__input" type="text" id="res_name">
-          <label class="mdl-textfield__label" for="res_name">名称：</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-          <i class="material-icons icons">place</i>
-          <input class="mdl-textfield__input" type="text" id="res_place">
-          <label class="mdl-textfield__label" for="res_place">交易地点：</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-          <i class="material-icons icons">contact_mail</i>
-          <input class="mdl-textfield__input" type="text" id="res_way">
-          <label class="mdl-textfield__label" for="res_way">联系方式（QQ或微信）</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
-          <i class="material-icons icons">description</i>
-          <textarea class="mdl-textfield__input" type="text" rows= "3" id="res_description" ></textarea>
-          <label class="mdl-textfield__label" for="res_description">描述一下：</label>
-        </div>
-        <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label full">
-          <i class="material-icons icons">class</i>
-          <select id="res_classify" class="mdl-selectfield__select">
-            <option value=""></option>
-            <option value="option1">分类 1</option>
-            <option value="option2">分类 2</option>
-            <option value="option2">分类 2</option>
-          </select>
-          <div class="mdl-selectfield__icon pd0"><i class="material-icons">arrow_drop_down</i></div>
-          <label class="mdl-selectfield__label" for="res_classify">选择分类</label>
-        </div>
-      </div><!--form_body end-->
-      <div class="full">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect pull-right form_submit" type="button">
-          马上发布
-        </button>
-      </div>
-    </form>
+    </div><!--listview end-->
   </div>
 </div>
 
-<footer id="footer">
+<footer id="footer" class="chatroom_footer">
     Copyright &copy; 2017 breadem.com
     
     <ul class="f-menu">
