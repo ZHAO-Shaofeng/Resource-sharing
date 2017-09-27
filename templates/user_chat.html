@@ -8,6 +8,7 @@
   <title>资源分享平台</title>
   <link rel="stylesheet" href="../static/css/material.min.css">
   <link rel="stylesheet" href="../static/css/material-icons.css">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
   <link rel="stylesheet" href="../static/css/mdl-selectfield.min.css">
   <link rel="stylesheet" href="../static/css/style.css">
 </head>
@@ -167,38 +168,43 @@
       <div class="page-content"><!-- Your user_panel_chat goes here -->
         <div class="container user_container">
           <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col subheaders">
+              <span class="pull-left">6月</span>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons">delete_sweep</i>
+              </button>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons">done_all</i>
+              </button>
+            </div>
             <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-cell--top user-card">
-              <ul class="mdl-list full user_chat_list">
-                <li class="mdl-list__item mdl-list__item--two-line has-news" onclick="location.href='chatroom.html'">
-                  <div class="mdl-list__item-primary-content full">
-                    <i class="mdl-list__item-avatar"><img src="../static/images/user.jpg" alt=""></i>
-                    <p class="mdl-list__item-title">ZHAO-Shaofeng</p>
-                    <p class="mdl-list__item-sub-title">聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文聊天内容正文正文正文</p>
-                  </div>
-                  <span class="mdl-list__item-secondary-content">
-                    <span class="mdl-list__item-secondary-info">20:03</span>
-                  </span>
+              <ul class="user_chat_list-main">
+                
+                <li class="list-item has-news">
+                  <a href="">
+                    <div class="list-item-avatar"><img src="../static/images/user.jpg" alt=""></div>
+                    <div class="list-item-content">
+                      <p class="item-title">Lin-XXX</p>
+                      <p class="item-sub-title">聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容</p>
+                    </div>
+                    <span class="secondary-content">
+                      <span class="secondary-info">15:27</span>
+                    </span>
+                  </a>
                 </li>
-                <li class="mdl-list__item mdl-list__item--two-line">
-                  <div class="mdl-list__item-primary-content full">
-                    <i class="mdl-list__item-avatar"><img src="../static/images/user.jpg" alt=""></i>
-                    <p class="mdl-list__item-title">LIN-XXX</p>
-                    <p class="mdl-list__item-sub-title">聊天内容正文正文正文</p>
-                  </div>
-                  <span class="mdl-list__item-secondary-content">
-                    <span class="mdl-list__item-secondary-info">15:27</span>
-                  </span>
+                <li class="list-item">
+                  <a href="">
+                    <div class="list-item-avatar"><img src="../static/images/user.jpg" alt=""></div>
+                    <div class="list-item-content">
+                      <p class="item-title">Bob Odenkirk</p>
+                      <p class="item-sub-title">聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容</p>
+                    </div>
+                    <span class="secondary-content">
+                      <span class="secondary-info">15:27</span>
+                    </span>
+                  </a>
                 </li>
-                <li class="mdl-list__item mdl-list__item--two-line">
-                  <div class="mdl-list__item-primary-content full">
-                    <i class="mdl-list__item-avatar"><img src="../static/images/user.jpg" alt=""></i>
-                    <p class="mdl-list__item-title">Bob Odenkirk</p>
-                    <p class="mdl-list__item-sub-title">聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容聊天内容</p>
-                  </div>
-                  <span class="mdl-list__item-secondary-content">
-                    <span class="mdl-list__item-secondary-info">15:27</span>
-                  </span>
-                </li>
+
               </ul>
             </div>
           </div><!--mdl-grid end-->
