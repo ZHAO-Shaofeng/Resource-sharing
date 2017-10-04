@@ -2,7 +2,7 @@
 *, *:active, *:hover { outline: medium none !important;}
 a,img,button,input,textarea{-webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-appearance:none;}
 /*input,textarea{-webkit-appearance:none;}*/   /*去掉textarea,input的默认样式  IOS上的圆角及内阴影等*/
-body {margin: 0; color: #5e5e5e; font-family: "微软雅黑",宋体,roboto,Arial; font-size: 13px; font-weight: 400; line-height: 1.42857; background-color: #fafafa;}
+body {margin: 0; color: #5e5e5e; font-family: "微软雅黑",roboto,Arial; font-size: 13px; font-weight: 400; line-height: 1.42857; background-color: #fafafa;}
 a{text-decoration: none;}
 ul{list-style: none; padding: 0; margin: 0;}
 img{border:0;}
@@ -1311,3 +1311,68 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
 }
 .subheaders .material-icons i{color: rgba(0, 0, 0, 0.54);}
 .mdl-card{min-height: auto;}
+
+
+
+
+
+
+
+
+
+/*
+    这里是最后整理的新代码，我的发布，对比学校的代码之后再决定是，从这里开始，不需要同步，
+    新文件： 我的发布
+*/
+
+
+
+
+
+
+/*user_myrelease*/
+.user__list{}
+.user__list .list-item{
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.user__list .list-item:last-child{border: 0;}
+.user__list .list-item a{
+    display: block;
+    padding: 24px 26px;
+    transition: 0.2s;
+    position: relative;
+}
+.user__list .list-item a:after{
+    display: table;
+    clear: both;
+    content: "";
+}
+.user__list .list-item a:hover{background: rgba(0, 0, 0, 0.04);}
+.user__list .list-item .info{
+    width: auto;
+    display: block;
+    vertical-align: top;
+}
+.user__list .list-item .media{
+    width: 150px;
+    vertical-align: top;
+    float: right;
+    padding-left: 26px;
+}
+.user__list .list-item .media img{width: 100%;}
+.user__list .list-item .info .list-item-title{
+    font-size: 16px;
+    color: rgba(0,0,0,.87);
+    font-weight: 400;
+}
+.user__list .list-item .info .list-item-words{
+    font-size: 13px;
+    color: #757575;
+}
+.user__list .list-item .info .list-item-time{
+    font-size: 12px;
+    color: rgba(0,0,0,.54);
+    line-height: 1;
+    margin: 0;
+}
