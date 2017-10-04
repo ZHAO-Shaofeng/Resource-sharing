@@ -104,9 +104,16 @@
           <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col subheaders">
               <span class="pull-left">6月</span>
-              <button class="mdl-button mdl-js-button mdl-button--icon">
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                 <i class="material-icons">delete</i>
               </button>
+              <button id="goods_sorting" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons">access_time</i>
+              </button>
+              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="goods_sorting">
+                <li class="mdl-menu__item">时间由近到远</li>
+                <li class="mdl-menu__item">时间由远到近</li>
+              </ul>
             </div>
             <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-cell--top user-card">
               <ul class="mdl-list full user__list">

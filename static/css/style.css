@@ -1051,8 +1051,8 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: calc(100% - 100px);
-    float: left;
+    /*width: calc(100% - 100px);*/
+    /*float: left;*/
     color: rgba(0,0,0,.87);
 }
 .mdl-list__item--two-line .mdl-list__item-primary-content .mdl-list__item-sub-title{
@@ -1062,8 +1062,8 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: calc(100% - 100px);
-    float: left;
+    /*width: calc(100% - 100px);
+    float: left;*/
 }
 .mdl-list__item .mdl-list__item-secondary-content{
     position: absolute;
@@ -1157,16 +1157,6 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
     width: 35px;
     height: 35px;
 }
-
-
-
-
-
-
-
-
-
-
 #chatroom_main .lv-avatar {
     width: 35px;
     height: 35px;
@@ -1308,30 +1298,56 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
     text-align: right;
     margin: 0 8px;
     padding: 0 26px;
+    position: relative;
+}
+.subheaders i.material-icons{color: rgba(0, 0, 0, 0.54);}
+.mdl-card{min-height: auto;}
+.user_chat_list-main{
+    display: block;
+    padding: 8px 0;
+    list-style: none;
+}
+.user_chat_list-main .list-item.has-news:after{
+    content: "";
+    position: absolute;
+    background: red;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 32px;
+    left: 68px;
+}
+.user_chat_list-main .list-item a{
+    display: block;
+    position: relative;
+}
+.user_chat_list-main .list-item a:hover{background: rgba(0, 0, 0, 0.04);}
+.user_chat_list-main .list-item .list-item-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/user_default.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+    position: absolute;
+    margin: 24px 0 0 26px;
+}
+.user_chat_list-main .list-item .list-item-avatar img{width: 100%;}
+.user_chat_list-main .list-item .list-item-content{
+    display: block;
+    height: 50px;
+    overflow: hidden;
+    margin-left: 92px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 .subheaders .material-icons i{color: rgba(0, 0, 0, 0.54);}
 .mdl-card{min-height: auto;}
-
-
-
-
-
-
-
-
-
-/*
-    这里是最后整理的新代码，我的发布，对比学校的代码之后再决定是，从这里开始，不需要同步，
-    新文件： 我的发布
-*/
-
-
-
-
-
-
 /*user_myrelease*/
-.user__list{}
 .user__list .list-item{
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -1375,4 +1391,66 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
     color: rgba(0,0,0,.54);
     line-height: 1;
     margin: 0;
+}
+.user_chat_list-main .list-item:last-child .list-item-content{border-color: transparent;}
+.user_chat_list-main .list-item .list-item-content .item-title{
+    width: calc(100% - 86px);
+    font-size: 16px;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0,0,0,.87);
+}
+.user_chat_list-main .list-item .list-item-content .item-sub-title{
+    width: calc(100% - 86px);
+    font-size: 13px;
+    height: 18px;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 18px;
+    color: rgba(0,0,0,.54);
+    display: block;
+    padding: 0;
+}
+.user_chat_list-main .list-item .secondary-content{
+    position: absolute;
+    right: 26px;
+    top: 24px;
+}
+.user_chat_list-main .list-item .secondary-info{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    color: rgba(0,0,0,.54);
+}
+@media (max-width: 585px) {
+    .subheaders{padding: 0;}
+    .user_chat_list-main .list-item a:hover{background: transparent;}
+    .user_chat_list-main .list-item .list-item-avatar{
+        margin: 16px 0 0 0;
+        width: 40px;
+        height: 40px;
+    }
+    .user_chat_list-main .list-item .list-item-content{
+        padding: 16px 0 20px;
+        margin-left: 56px;
+    }
+    .user_chat_list-main .list-item .list-item-content .item-sub-title, .user_chat_list-main .list-item .list-item-content .item-title{width: calc(100% - 62px);}
+    .user_chat_list-main .list-item .list-item-content .item-title{font-size: 14px;}
+    .user_chat_list-main .list-item .secondary-content{
+        right: 16px;
+        top: 16px;
+    }
+    .user_chat_list-main .list-item.has-news:after{
+        top: 25px;
+        left: 34px;
+    }
 }
