@@ -129,10 +129,10 @@ if(body_length > 1024){                                            //大于1024�
   })
 }
 if(body_length <= 1024 && body_length > 768){                     //小于1024大于768宽度时
-  console.log("小于1024大于768宽度时");
+  // console.log("小于1024大于768宽度时");
   $(".mdl-layout").on("scroll",function(){
     var opacity = bodyDom.scrollTop;
-    console.log(opacity);
+    // console.log(opacity);
     if(opacity > 0){
       var header_opacity = 0 + opacity*.005;
       var userbar_opacity = 1 - opacity*.006;
@@ -149,10 +149,10 @@ if(body_length <= 1024 && body_length > 768){                     //小于1024�
   })
 }
 if(body_length <= 768){                                           //小于768宽度时
-  console.log("小于768宽度时");
+  // console.log("小于768宽度时");
   $(".mdl-layout").on("scroll",function(){
     var opacity = bodyDom.scrollTop;
-    console.log(opacity);
+    // console.log(opacity);
     if(opacity > 0){
       var header_opacity = 0 + opacity*.008;
       var userbar_opacity = 1 - opacity*.015;

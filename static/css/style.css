@@ -425,7 +425,10 @@ form[name=register_form]{display: none;}
     .mdl-layout__header-bg{opacity: 0;}
 }
 header.mdl-layout__header, .mdl-layout__drawer-button i{color: #fff;}
-header .mdl-textfield__input{border-color: #fff;}
+header .mdl-textfield__input{
+    border-color: #fff;
+    color: #fff;
+}
 .mdl-layout.is-upgraded .mdl-layout__tab.is-active,
 .mdl-layout__tab-bar-button.is-active{color: rgb(255, 255, 255);}
 .mdl-layout__tab{color: rgba(255, 255, 255, 0.5);}
@@ -655,7 +658,7 @@ body[name=drawer_visible] .mdl-layout__obfuscator{position: fixed;}
 .popUps_box{
     position: relative;
     z-index: 3;
-    margin: 210px auto 16px;
+    margin: 150px auto 16px;
     max-width: 768px;
     width: 100%;
     border-radius: 2px;
